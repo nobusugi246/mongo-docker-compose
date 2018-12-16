@@ -11,9 +11,10 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: mongopass
+      MONGO_INITDB_DATABASE: pomo
     volumes:
       - ./db:/data/db
-      - ./configdb:/data/configdb
+      - ./initdb:/docker-entrypoint-initdb.d
  
   mongo-express:
     image: mongo-express
